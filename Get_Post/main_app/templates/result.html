@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Results</title>
+</head>
+<body>
+    <div id="box">
+        <img src="static/pythonlogo.png" alt="python programming language logo">
+        <div class="result">
+            <p>Name: {{ data.your_name }}</p>
+            <p>Location: {{ data.city }}</p>
+            <p>Language: {{ data.favorite_language }}</p>
+            <p>OS: {{ data.version }}</p>
+            <p>Code Editor: {{ data.editor }}</p>
+            <p>Comments: {{ data.comments }}</p>
+            <br>
+            <div class="link">
+                <a href="http://localhost:8000">Take the survey again</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

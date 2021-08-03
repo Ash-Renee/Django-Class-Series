@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div id="box">
+        <img src="static/pythonLogo.png" alt="python language logo">
+        <div class="data">
+            <form action="/result" method="post">
+                {% csrf_token %}
+                <p>Welcome to our survey of programmers! Please let us know a bit about you:</p>
+                <div class="form-group">
+                    <input type="text" id="your_name" name="your_name" class="text" placeholder="Your Name" style="margin-top: 10px;">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" id="city" name="city" class="text" placeholder="Your City">
+                </div>
+                <br>
+                <p>What is your favorite language?</p>
+                <div class="form-group">
+                    <select name="favorite_language" id="favorite_language">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+                <p>What OS are you using?</p>
+                <div class="form-group">
+                    <label for="current os">Windows</label>
+                    <input type="radio" name="version" id="system" value="Windows">
+                </div>
+                <div class="form-group">
+                    <label for="current os">MacOS</label>
+                    <input type="radio" name="version" id="system" value="MacOS">
+                </div>
+                <div class="form-group">
+                    <label for="current os">Linux</label>
+                    <input type="radio" name="version" id="system" value="Linux">
+                </div>
+                <p>What code editor are you using?</p>
+                <div class="form-group">
+                    <label for="VS Code">VS Code</label>
+                    <input type="checkbox" name="editor" id="checkbox" value="VS Code">
+                </div>
+                <div class="form-group">
+                    <label for="PyCharm">PyCharm</label>
+                    <input type="checkbox" name="editor" id="checkbox" value="PyCharm">
+                </div>
+                <div class="form-group">
+                    <label for="Notepad">Notepad</label>
+                    <input type="checkbox" name="editor" id="checkbox" value="Notepad">
+                </div>
+                <p>Comments (optional):</p>
+                <div class="form-group">
+                    <textarea name="comments" id="comments" cols="40" rows="5"></textarea>
+                </div>
+                <div class="button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
